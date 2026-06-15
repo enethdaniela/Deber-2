@@ -1,0 +1,27 @@
+C008 | ANÁLISIS — clases vs funciones libres
+Lee el siguiente código y responde las preguntas:
+
+  // Versión A: con funciones libres
+  double areaCirculo(double r) { return 3.14159 * r * r; }
+  double periCirculo(double r) { return 2 * 3.14159 * r;  }
+
+  // Versión B: con clase
+  class Circulo {
+  public:
+      double radio;
+      double area()       { return 3.14159 * radio * radio; }
+      double perimetro()  { return 2 * 3.14159 * radio;     }
+  };
+
+  a) ¿Cuál es la diferencia entre llamar areaCirculo(5.0)
+     y crear un Circulo con radio=5 y llamar c.area()?
+  b) Si tienes 100 círculos distintos, ¿cuál versión
+     es más fácil de manejar? ¿Por qué?
+  c) ¿Qué pasa en la versión A si necesitas pasar el radio
+     a 10 funciones distintas?
+
+  Tu respuesta:
+  a) Version A: no tiene memoria y recibe un valor aislado, hyace el calculo y lo devuelve. el dato y la logica esta completamente separados.
+     Version B: no necesita parametros porque el objeto ya sabe su propio radio. 
+  b) La version B. si usamos la version A, tendriamo que gestionar 100 variables sueltas y asegurarte de pasar la variable correcta. Con la version B, podemos simplemente crear un arreglo de objetos, donde cada circulo es independiente y sabe sus porpios datos.
+  c) Tendriamos que pasar la varibale del radio manualmente como argumento a las 10 funciones. seria un codigo muy propenso a errores y repetitivo.  

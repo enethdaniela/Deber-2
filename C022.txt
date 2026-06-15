@@ -1,0 +1,37 @@
+C022 | TRAZA — const en métodos
+RESUELVE A MANO. ¿Qué líneas producen ERROR DE COMPILACIÓN
+y cuáles son correctas?
+
+  class Caja {
+  private:
+      int contenido;
+  public:
+      Caja(int c) : contenido(c) {}
+
+      int  getContenido() const { return contenido; }
+      void setContenido(int c)  { contenido = c;    }
+
+      // ¿Este método compila?
+      int getDoble() const {
+          contenido = contenido * 2;   // línea A
+          return contenido;            // línea B
+      }
+  };
+
+  int main() {
+      Caja c(10);
+      const Caja fija(99);
+
+      cout << c.getContenido();    // línea C
+      c.setContenido(20);          // línea D
+      cout << fija.getContenido(); // línea E
+      fija.setContenido(50);       // línea F
+  }
+
+  Indica para cada línea marcada: ¿compila? ¿por qué?
+  Línea A: _______________________________________________
+  Línea B: _______________________________________________
+  Línea C: _______________________________________________
+  Línea D: _______________________________________________
+  Línea E: _______________________________________________
+  Línea F: _______________________________________________
