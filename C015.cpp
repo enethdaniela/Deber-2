@@ -42,10 +42,10 @@ class Recurso {
     public:
         std::string nombre;
 
-        Recurso(std::string nom) : nombre(nom) {
+        Recurso(std::string n) : nombre(n) {
             std::cout << nombre << " creado." << std::endl; 
         }
-        ~Recurso(){
+        ~Recurso() {
             std::cout << nombre << " destruido" << std::endl;
         }
 };

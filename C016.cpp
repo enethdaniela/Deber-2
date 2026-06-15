@@ -19,16 +19,16 @@ Salida esperada:
 #include <iostream>
 
 class Fecha {
-    public:
-        int dia, mes, anio;
+  public:
+    int dia, mes, anio;
 
-        Fecha(): dia(1), mes(1), anio(2000) {}
-        Fecha(int d, int m, int a) : dia(a), mes(m), anio(a) {}
-        Fecha(int d, int m) : dia(d), mes(m), anio(2024) {}
+    Fecha(): dia(01), mes(01), anio(2000) {}
+    Fecha(int d, int m, int a) : dia(d), mes(m), anio(a) {}
+    Fecha(int d, int m) : dia(d), mes(m), anio(2024) {}
 
-        void imprimir() {
-          std::cout << dia << '/' << mes << '/' << anio << '\n';
-        }
+    void imprimir() {
+      std::cout << dia << '/' << mes << '/' << anio << '\n';
+    }
 };
 
 int main() {
@@ -39,4 +39,6 @@ int main() {
   f1.imprimir();
   f2.imprimir();
   f3.imprimir();
+
+  return 0;
 }

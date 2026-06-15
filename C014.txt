@@ -27,6 +27,6 @@ RESUELVE A MANO: ¿qué imprime este programa?
   }
 
 Escribe la salida esperada A MANO:
-  Línea 1: 120km/h
+  Línea 1: 120 km/h
   Línea 2: 0 m/s
   Línea 3: 0 km/h
