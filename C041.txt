@@ -1,0 +1,37 @@
+C041 | El problema sin virtual — TRAZA
+RESUELVE A MANO. ¿Qué imprime cada versión?
+
+  // VERSION A — sin virtual
+  class Base {
+  public:
+      void mostrar() { cout << "Base" << endl; }
+  };
+  class Derivada : public Base {
+  public:
+      void mostrar() { cout << "Derivada" << endl; }
+  };
+
+  // VERSION B — con virtual
+  class BaseV {
+  public:
+      virtual void mostrar() { cout << "BaseV" << endl; }
+  };
+  class DerivadaV : public BaseV {
+  public:
+      void mostrar() override { cout << "DerivadaV" << endl; }
+  };
+
+  int main() {
+      Base*     p1 = new Derivada();
+      BaseV*    p2 = new DerivadaV();
+
+      p1->mostrar();   // línea A
+      p2->mostrar();   // línea B
+
+      delete p1; delete p2;
+  }
+
+  Línea A imprime: Base  ¿por qué?
+  porque el método mostrar() no es virtual, entonces se llama al método de la clase Base.
+  Línea B imprime: DerivadaV  ¿por qué?
+  porque el método mostrar() es virtual, entonces se llama al método de la clase DerivadaV.

@@ -1,0 +1,31 @@
+C043 | override y virtual — diferencias
+ANÁLISIS: Lee el siguiente código e indica qué problema tiene.
+
+  class Animal {
+  public:
+      virtual void hacerSonido() { cout << "..." << endl; }
+  };
+
+  class Perro : public Animal {
+  public:
+      // Versión A:
+      void hacerSonido() { cout << "Guau!" << endl; }
+
+      // Versión B:
+      void hacerSonido() override { cout << "Guau!" << endl; }
+
+      // Versión C:
+      virtual void hacerSonido() { cout << "Guau!" << endl; }
+
+      // Versión D — error tipográfico:
+      void hacerSonidos() override { cout << "Guau!" << endl; }
+  };
+
+  a) ¿Cuál es la diferencia entre A y B?
+  b) ¿Por qué D daría error de compilación?
+  c) ¿Es necesario repetir virtual en la versión C?
+
+  Tu respuesta:
+  a) La diferencia es el uso de override en la version B, que indica que el método está sobrescribiendo un método virtual de la clase base. En la versión A, el método también sobrescribe el método de la clase base, pero no se indica explícitamente, lo que puede llevar a errores.
+  b) D daría error de compilación porque el método hacerSonidos() no coincide con el método virtual hacerSonido() de la clase base, por lo que no se puede usar override.
+  c) No, no es necesario repetir virtual en la versión C, ya que el método ya es virtual por herencia.

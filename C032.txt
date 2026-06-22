@@ -1,0 +1,41 @@
+C032 | protected vs private
+ANÁLISIS — Lee el siguiente código e identifica qué líneas
+producen ERROR DE COMPILACIÓN y por qué:
+
+  class Figura {
+  private:
+      string tipo;       // atributo privado
+  protected:
+      double area;       // atributo protegido
+  public:
+      Figura(string t) : tipo(t), area(0) {}
+      string getTipo() const { return tipo; }
+  };
+
+  class Cuadrado : public Figura {
+  private:
+      double lado;
+  public:
+      Cuadrado(double l) : Figura("cuadrado"), lado(l) {
+          area = lado * lado;  // línea A
+          tipo = "cuadrado2";  // línea B
+      }
+      void imprimir() const {
+          cout << getTipo() << ": " << area << endl;  // línea C
+          cout << tipo << endl;                        // línea D
+      }
+  };
+
+  int main() {
+      Cuadrado c(5.0);
+      cout << c.area;      // línea E
+      cout << c.getTipo(); // línea F
+  }
+
+  Indica para cada línea: ¿compila? ¿por qué?
+  Línea A: Si, area es un atributo en protected, la clase hija tiene acceso directo.
+  Línea B: No, tipo esta en private, la clase h8ija no tiene acceso directo.
+  Línea C: Si
+  Línea D: No, tipo es un atrubuto privado.
+  Línea E: 
+  Línea F:

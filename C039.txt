@@ -1,0 +1,23 @@
+C039 | ANÁLISIS — cuándo usar herencia
+Lee las siguientes situaciones y decide en cada caso si
+herencia es la solución correcta. Justifica.
+
+  a) Tienes clases Auto y Camion. Ambas tienen marca, anio,
+     velocidadMax y métodos arrancar() y frenar().
+     ¿Deberían heredar de una clase Vehiculo?
+
+  b) Tienes clases Perro y Mesa. Ambas tienen un atributo
+     peso. ¿Deberían heredar de una clase ConPeso?
+
+  c) Tienes clase Circulo y clase Cuadrado. Ambas calculan
+     área y perímetro. ¿Deberían heredar de Figura?
+
+  d) Tienes clase Manager y clase Empleado. Manager tiene
+     todos los datos de Empleado más algunos adicionales.
+     ¿Manager debería heredar de Empleado?
+
+  Tu respuesta:
+  a) Si, deberían heredar de una clase Vehiculo porque comparten atributos y métodos similares.
+  b) No, aunque tenga un atributo con el mismo nombre, no significan los mismo.
+  c) Si, deberían heredar de una clase Figura porque comparten métodos similares.
+  d) Si, Manager debería heredar de Empleado porque es un tipo de Empleado

@@ -29,9 +29,9 @@ y cuáles son correctas?
   }
 
   Indica para cada línea marcada: ¿compila? ¿por qué?
-  Línea A: _______________________________________________
-  Línea B: _______________________________________________
-  Línea C: _______________________________________________
-  Línea D: _______________________________________________
-  Línea E: _______________________________________________
-  Línea F: _______________________________________________
+  Línea A: No compila, porque se intenta modificar un miembro de datos en un método constante.
+  Línea B: Compila.
+  Línea C: Compila.
+  Línea D: Compila.
+  Línea E: Compila.
+  Línea F: No compila, porque se intenta llamar a un método no constante en un objeto constante.
